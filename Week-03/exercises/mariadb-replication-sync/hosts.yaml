@@ -1,11 +1,11 @@
 galera-cluster-nodes:
   hosts:
     one:
-      ansible_host: 192.168.1.171
+      ansible_host: 192.168.1.249
       ansible_user: cloudgenius
     two:
-      ansible_host: 192.168.1.172
+      ansible_host: 192.168.1.250
       ansible_user: cloudgenius
     three:
-      ansible_host: 192.168.1.173
+      ansible_host: 192.168.1.251
       ansible_user: cloudgenius
