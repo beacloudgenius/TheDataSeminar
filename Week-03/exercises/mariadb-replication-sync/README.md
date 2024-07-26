@@ -44,15 +44,15 @@ rm -rf roles collections ~/.ansible
 ansible-galaxy install -r requirements.yaml --force
 
 ansible all -m ping
-ansible all -a "apt-get update"
-ansible all -a "apt-get install ufw -y"
-ansible all -a "ufw status"
-ansible all -a "ufw allow 3306,4567,4568,4444/tcp"
-ansible all -a "ufw allow 4567/udp"
-ansible all -a "ufw status"
-ansible all -a "ufw allow ssh"
-ansible all -a "ufw show added"
-ansible all -a "ufw --force enable"
+ansible all -a "sudo apt-get update"
+ansible all -a "sudo apt-get install ufw -y"
+ansible all -a "sudo ufw status"
+ansible all -a "sudo ufw allow 3306,4567,4568,4444/tcp"
+ansible all -a "sudo ufw allow 4567/udp"
+ansible all -a "sudo ufw status"
+ansible all -a "sudo ufw allow ssh"
+ansible all -a "sudo ufw show added"
+ansible all -a "sudo ufw --force enable"
 ansible all -m ping
 
 ansible-playbook main.yaml
