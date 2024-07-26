@@ -41,16 +41,21 @@ docker compose exec -it mongod1 mongosh -u "nilesh" -p "A12345" --quiet --eval "
 docker compose exec -it mongod1 mongosh -u "nilesh" -p "A12345" --quiet --eval "rs.initiate();" --json relaxed
 ```
 
-### Connection string
+### Connection
+
 
 ```
+using mongo shell
 
-mongodb://nilesh:A12345@cosmos.cg.home.arpa:27017/?authSource=admin
+mongosh "mongodb://nilesh:A12345@dockerhost.cg.home.arpa:27017,dockerhost.cg.home.arpa:27018,dockerhost.cg.home.arpa:27019/?authSource=admin&replicaSet=dbrs"
 
-mongodb://nilesh:A12345@cosmos.cg.home.arpa:27017,cosmos.cg.home.arpa:27018,cosmos.cg.home.arpa:27019/?
-authSource=admin&replicaSet=dbrs
+using other software such as mongo-express or mongo compass or studio 3T
 
-mongodb://cosmos.cg.home.arpa:27017,cosmos.cg.home.arpa:27018,cosmos.cg.home.arpa:27019/?replicaSet=dbrs
+mongodb://nilesh:A12345@dockerhost.cg.home.arpa:27017/?authSource=admin
+
+mongodb://nilesh:A12345@dockerhost.cg.home.arpa:27017,dockerhost.cg.home.arpa:27018,dockerhost.cg.home.arpa:27019/?authSource=admin&replicaSet=dbrs
+
+mongodb://dockerhost.cg.home.arpa:27017,dockerhost.cg.home.arpa:27018,dockerhost.cg.home.arpa:27019/?replicaSet=dbrs
 
 ```
 
