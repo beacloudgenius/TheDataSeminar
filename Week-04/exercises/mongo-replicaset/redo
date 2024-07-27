@@ -3,12 +3,15 @@ sudo rm -rf volumes/
 docker compose up -d --force-recreate
 docker compose exec -it mongod1 mongosh -u "nilesh" -p "A12345"  --eval "rs.status();"
 
-mongosh "mongodb://nilesh:A12345@dockerhost.cg.home.arpa:27017,dockerhost.cg.home.arpa:27018,dockerhost.cg.home.arpa:27019/?authSource=admin&replicaSet=dbrs"
+# mongosh "mongodb://nilesh:A12345@dockerhost.cg.home.arpa:27017,dockerhost.cg.home.arpa:27018,dockerhost.cg.home.arpa:27019/?authSource=admin&replicaSet=dbrs"
 
+# mongosh "mongodb://nilesh:A12345@192.168.1.252:27017,192.168.1.252:27018,192.168.1.252:27019/?authSource=admin&replicaSet=dbrs"
 
-use admin;
-db.auth("nilesh","A12345");
+# mongosh "mongodb://nilesh:A12345@localhost:27017,localhost:27018,localhost:27019/?authSource=admin&replicaSet=dbrs"
 
-db.createUser({user:"unifi",pwd:"unifi",roles:["readWriteAnyDatabase"]});
+# use admin;
+# db.auth("nilesh","A12345");
 
-#docker compose logs -f
+# db.createUser({user:"unifi",pwd:"unifi",roles:["readWriteAnyDatabase"]});
+
+# docker compose logs -f
